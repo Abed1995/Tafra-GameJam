@@ -551,3 +551,102 @@ Received Import Request.
 Start importing Assets/Prefabs using Guid(40fa0574650209c47a18349a110324b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9387fd158f753db7394d40def522e860') in 0.012999 seconds
   Import took 0.028519 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 611.094586 seconds.
+  path: Assets/Prefabs/Wizard.prefab
+  artifactKey: Guid(e81e89c7f4404b046ad7c393604a5d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Wizard.prefab using Guid(e81e89c7f4404b046ad7c393604a5d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (Wizard) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (Wizard) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '38b793b2ab47385412b7c1014f9faa5d') in 0.137243 seconds
+  Import took 0.142384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025402 seconds.
+  path: Assets/Prefabs/Wizard.prefab
+  artifactKey: Guid(e81e89c7f4404b046ad7c393604a5d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Wizard.prefab using Guid(e81e89c7f4404b046ad7c393604a5d4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (Wizard) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (Wizard) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '38b793b2ab47385412b7c1014f9faa5d') in 0.018590 seconds
+  Import took 0.023214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 321.082299 seconds.
+  path: Assets/Prefabs/Wizard-bolt.prefab
+  artifactKey: Guid(2921682713a08c147af9897ea297c4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Wizard-bolt.prefab using Guid(2921682713a08c147af9897ea297c4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3178d6d4fe590f20562448de2b500770') in 0.038353 seconds
+  Import took 0.043642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 169.477579 seconds.
+  path: Assets/Sprites/Wizard/attack.png
+  artifactKey: Guid(76ae838b81bbf5949ae5a4c3e4b4df52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Wizard/attack.png using Guid(76ae838b81bbf5949ae5a4c3e4b4df52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '278830f889b26809fdb36fa8e4bcc332') in 0.121666 seconds
+  Import took 0.127052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.593915 seconds.
+  path: Assets/Sprites/Wizard/die.png
+  artifactKey: Guid(0d81b5601e922e14ea25f11b2eba504e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Wizard/die.png using Guid(0d81b5601e922e14ea25f11b2eba504e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3178d200a7c5d90569291ea2c7ab2739') in 0.070132 seconds
+  Import took 0.074012 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.426187 seconds.
+  path: Assets/Sprites/Wizard/idle.png
+  artifactKey: Guid(d6553f3d6a22cd341a0f71ff33a0a453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Wizard/idle.png using Guid(d6553f3d6a22cd341a0f71ff33a0a453) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6810ccd6cb382a415e59b32e7e07109') in 0.092230 seconds
+  Import took 0.097126 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
