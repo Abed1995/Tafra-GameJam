@@ -3,15 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tile Map
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Back Ground
   - Water
   - UI
-  - 
+  - Tile Map
   - 
   - 
   - 
@@ -40,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back Ground
+    uniqueID: 2224528629
+    locked: 0
+  - name: Fore Ground
+    uniqueID: 1873924733
     locked: 0
