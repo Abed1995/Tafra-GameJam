@@ -11,12 +11,15 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     GameObject blackMagic;
 
+    CircleCollider2D cc;
+
     int health;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
+        cc = GetComponent<CircleCollider2D>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         StartCoroutine(SpawningBlackMagic());
@@ -50,11 +53,13 @@ public class Enemy : MonoBehaviour
 
     }
 
-    IEnumerator DelayNavMesh()
+    IEnumerator DelayComponents()
     {
+        cc.enabled = false;
         agent.enabled = false;
         yield return new WaitForSeconds(5);
         agent.enabled = true;
+        cc.enabled = true;
 
 
 
@@ -66,7 +71,7 @@ public class Enemy : MonoBehaviour
         {
             health -= 20;
             Destroy(other.gameObject);
-            StartCoroutine(DelayNavMesh());
+            StartCoroutine(DelayComponents());
 
             Debug.Log(health);
         }
