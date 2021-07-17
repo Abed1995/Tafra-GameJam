@@ -8,6 +8,9 @@ TagManager:
   - Ta3weza
   - Black Magic
   - Eye
+  - Enemy
+  - Heart
+  - Health Image
   layers:
   - Default
   - TransparentFX

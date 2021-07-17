@@ -16,16 +16,36 @@ public class Player : MonoBehaviour
     [SerializeField]
     GameObject eye;
 
+    [SerializeField]
+    AudioClip heartSound;
+
+    [SerializeField]
+    AudioClip taawezaSound;
+
+    [SerializeField]
+    AudioClip blackMagicSound;
+
+    //[SerializeField]
+    //AudioClip eye;
     UiManager uiManager;
 
-    bool gameOver = false;
+    public static bool gameOver;
 
-    int playerHealth = 100;
-     
+    float maxplayerHealth ;
+    float currentplayerHealth ;
+
+   
+    [SerializeField]
+    Image healthImage;
+
     // Start is called before the first frame update
     void Start()
     {
         uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
+        gameOver = false;
+        maxplayerHealth = 100;
+        currentplayerHealth = 100 ;
+        healthImage = GameObject.FindGameObjectWithTag("Health Image").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -37,7 +57,13 @@ public class Player : MonoBehaviour
     {
         Move();
         InstantiateEyes();
-        Die();
+
+        healthImage.fillAmount = currentplayerHealth / maxplayerHealth;
+        if (currentplayerHealth == 0)
+        {
+            Die();
+        }
+
     }
     void Move()
     {
@@ -64,6 +90,7 @@ public class Player : MonoBehaviour
             }
 
             uiManager.UpdateScore();
+            AudioSource.PlayClipAtPoint(taawezaSound, transform.position);
         }
 
         if (other.gameObject.tag == ("Black Magic"))
@@ -71,49 +98,51 @@ public class Player : MonoBehaviour
 
             Destroy(other.gameObject);
 
-            playerHealth -= 20;
+            currentplayerHealth -= 20;
 
-            Debug.Log(playerHealth);
+            Debug.Log(currentplayerHealth);
+
+            AudioSource.PlayClipAtPoint(blackMagicSound, transform.position);
         }
 
         if (other.gameObject.tag == ("Enemy"))
         {
 
-            Destroy(this.gameObject);
+            Die();
 
-            gameOver = true;
 
-          
+
         }
 
         if (other.gameObject.tag == ("Heart"))
         {
             Destroy(other.gameObject);
-            playerHealth += 20;
-            if (playerHealth >= 100)
+            currentplayerHealth += 20;
+            if (currentplayerHealth >= 100)
             {
-                playerHealth = 100;
+                 currentplayerHealth = 100;
             }
-
+            AudioSource.PlayClipAtPoint(heartSound, transform.position);
 
         }
     }
 
     void InstantiateEyes ()
     {
-        if (taawezaCount == 1 && Input.GetKeyDown(KeyCode.Space))
+        if (taawezaCount == 2 && Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(eye, this.transform.position, Quaternion.identity);
-            taawezaCount -= 1;
+            taawezaCount -= 2;
         }
     }
 
     void Die()
     {
-        if (playerHealth == 0)
-        {
-            Destroy(this.gameObject);
-            gameOver = true; 
-        }
+        
+            
+            gameOver = true;
+            uiManager.ShowGameOverPanel();
+
+
     }
 }

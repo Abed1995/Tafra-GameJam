@@ -120,6 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   eye: {fileID: 9023091964770788617, guid: 18b6e9620e2ab80419c77b6fb76ceb8e, type: 3}
+  heartSound: {fileID: 8300000, guid: b425671bc2b49ea4298a69d70f5b3fad, type: 3}
+  taawezaSound: {fileID: 8300000, guid: bb6cdd13aeb95f743847b1cd460889bc, type: 3}
+  blackMagicSound: {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
+  healthImage: {fileID: 0}
 --- !u!70 &6240672919813379826
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

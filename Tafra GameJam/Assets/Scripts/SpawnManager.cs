@@ -14,11 +14,21 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     GameObject[] people;
 
+    [SerializeField]
+    GameObject player;
+
+    [SerializeField]
+    GameObject enemy;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        Instantiate(player, new Vector3(-18.08f, -9.08f, 0), Quaternion.identity);
+
+        Instantiate(enemy, new Vector3(19.21f, -7.73f, 0), Quaternion.identity);
+        
         StartCoroutine(SpawningTaawezaandPeople());
         StartCoroutine(SpawningHeart());
     }
@@ -35,7 +45,7 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(1, 3));
             Instantiate(taaweza, new Vector3(Random.Range(-18, 18), -7.81f, 0), Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(8, 10));
+            yield return new WaitForSeconds(Random.Range(6, 8));
             Instantiate(people[0], new Vector3(-21.2f, -7.31f, 0), Quaternion.identity);
         }
         
@@ -45,12 +55,14 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds( 10);
+            yield return new WaitForSeconds(10);
             Instantiate(heart, new Vector3(Random.Range(-18,18), Random.Range(-7.7f , 9.5f), 0), Quaternion.identity);
 
         }
 
     }
+
+    
 
 
 }

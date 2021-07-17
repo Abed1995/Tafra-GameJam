@@ -6,6 +6,10 @@ public class People : MonoBehaviour
 {
     [SerializeField]
     GameObject enemy;
+
+    [SerializeField]
+    AudioClip transformation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +26,20 @@ public class People : MonoBehaviour
     {
         if (other.gameObject.tag == ("Ta3weza"))
         {
-            Instantiate(enemy, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
-           
-            Destroy(this.gameObject);
+            StartCoroutine(startTransformation());
 
+           
         }
+    }
+
+    IEnumerator startTransformation()
+    {
+        AudioSource.PlayClipAtPoint(transformation, transform.position);
+        yield return new WaitForSeconds(.3f);
+        Instantiate(enemy, transform.position, Quaternion.identity);
+       
+
+        Destroy(this.gameObject);
     }
 }

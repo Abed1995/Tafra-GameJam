@@ -13,12 +13,20 @@ public class Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        DestroyItSelf();
     }
 
     IEnumerator DestroyItSelf()
     {
         yield return new WaitForSeconds(8);
         Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == ("Tile Map"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

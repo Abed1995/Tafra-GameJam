@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2528840130280306662, guid: e777f60f702e47349ab20e24adc52764, type: 3}
+  transformation: {fileID: 8300000, guid: 9674948686953514fb66608de44ee644, type: 3}
 --- !u!50 &488575458360409228
 Rigidbody2D:
   serializedVersion: 4

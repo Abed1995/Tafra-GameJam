@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class Enemy : MonoBehaviour
 
     CircleCollider2D cc;
 
-    int health;
-
+    float maxhealth;
+    float currenthealth;
     SpriteRenderer sr;
 
     Rigidbody2D rb;
@@ -28,7 +29,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
-        player = GameObject.Find("Player");
+        //player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CircleCollider2D>();
@@ -36,7 +38,7 @@ public class Enemy : MonoBehaviour
         agent.updateUpAxis = false;
         StartCoroutine(SpawningBlackMagic());
 
-        health = 100;
+        currenthealth = maxhealth = 100;
         sr = GetComponentInChildren<SpriteRenderer>();
 
         pos = transform.position;
@@ -58,6 +60,7 @@ public class Enemy : MonoBehaviour
             transform.position = new Vector3(transform.position.x, -7.73f, transform.position.z);
         }
 
+        transform.Find("Enemy Canvas").GetChild(1).GetComponent<Image>().fillAmount = currenthealth / maxhealth;
         Die();
         FlipSprite();
         uiManager.IncreaseScore();
@@ -90,17 +93,17 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == ("Eye"))
         {
-            health -= 50;
+            currenthealth -= 50;
             Destroy(other.gameObject);
             StartCoroutine(DelayComponents());
 
-            Debug.Log(health);
+            Debug.Log(currenthealth);
         }
     }
 
     void Die ()
     {
-        if (health == 0)
+        if (currenthealth == 0)
         {
             Destroy(this.gameObject);
         }
