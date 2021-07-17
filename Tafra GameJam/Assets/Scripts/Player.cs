@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     UiManager uiManager;
 
+    bool gameOver = false;
+
     int playerHealth = 100;
      
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     {
         Move();
         InstantiateEyes();
+        Die();
     }
     void Move()
     {
@@ -55,7 +58,7 @@ public class Player : MonoBehaviour
           
             Destroy(other.gameObject);
 
-            if (taawezaCount < 3)
+            if (taawezaCount < 1)
             {
                 taawezaCount++;
             }
@@ -72,14 +75,45 @@ public class Player : MonoBehaviour
 
             Debug.Log(playerHealth);
         }
+
+        if (other.gameObject.tag == ("Enemy"))
+        {
+
+            Destroy(this.gameObject);
+
+            gameOver = true;
+
+          
+        }
+
+        if (other.gameObject.tag == ("Heart"))
+        {
+            Destroy(other.gameObject);
+            playerHealth += 20;
+            if (playerHealth >= 100)
+            {
+                playerHealth = 100;
+            }
+
+
+        }
     }
 
     void InstantiateEyes ()
     {
-        if (taawezaCount ==3 && Input.GetKeyDown(KeyCode.Space))
+        if (taawezaCount == 1 && Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(eye, this.transform.position, Quaternion.identity);
-            taawezaCount -= 3;
+            taawezaCount -= 1;
+        }
+    }
+
+    void Die()
+    {
+        if (playerHealth == 0)
+        {
+            Destroy(this.gameObject);
+            gameOver = true; 
         }
     }
 }

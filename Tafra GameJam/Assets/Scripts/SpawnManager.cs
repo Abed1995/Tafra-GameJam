@@ -8,6 +8,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     GameObject taaweza;
 
+    [SerializeField]
+    GameObject heart;
 
     [SerializeField]
     GameObject[] people;
@@ -17,8 +19,8 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
        
-        StartCoroutine(SpawningTaaweza());
-        StartCoroutine(SpawningPeople());
+        StartCoroutine(SpawningTaawezaandPeople());
+        StartCoroutine(SpawningHeart());
     }
 
     // Update is called once per frame
@@ -27,24 +29,25 @@ public class SpawnManager : MonoBehaviour
        
     }
 
-    IEnumerator SpawningTaaweza()
+    IEnumerator SpawningTaawezaandPeople()
     {
         while (true)
         {
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(Random.Range(1, 3));
             Instantiate(taaweza, new Vector3(Random.Range(-18, 18), -7.81f, 0), Quaternion.identity);
-           
+            yield return new WaitForSeconds(Random.Range(8, 10));
+            Instantiate(people[0], new Vector3(-21.2f, -7.31f, 0), Quaternion.identity);
         }
         
     }
 
-    IEnumerator SpawningPeople()
+    IEnumerator SpawningHeart()
     {
         while (true)
         {
-            yield return new WaitForSeconds(7);
-            Instantiate(people[0], new Vector3(-21.2f, -7.31f, 0), Quaternion.identity);
-            
+            yield return new WaitForSeconds( 10);
+            Instantiate(heart, new Vector3(Random.Range(-18,18), Random.Range(-7.7f , 9.5f), 0), Quaternion.identity);
+
         }
 
     }
