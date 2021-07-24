@@ -24,7 +24,7 @@ public class UiManager : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         score = 0;
-        pointIncreasePerSecond = 1000f;
+        
     }
 
     private void FixedUpdate()
@@ -34,7 +34,7 @@ public class UiManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public   void UpdateScore()
+    public void UpdateScore()
     {
         
         score += 10;
@@ -69,7 +69,7 @@ public class UiManager : MonoBehaviour
     public void RestartButton()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Player.gameOver = false;
         score = 0;
       

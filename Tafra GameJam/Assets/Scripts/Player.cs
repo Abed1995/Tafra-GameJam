@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
           
             Destroy(other.gameObject);
 
-            if (taawezaCount < 1)
+            if (taawezaCount < 2)
             {
                 taawezaCount++;
             }
