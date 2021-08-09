@@ -20,6 +20,7 @@ public class People : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * 4 *Time.deltaTime);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

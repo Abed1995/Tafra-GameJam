@@ -17,14 +17,15 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     GameObject Congratulation;
 
-    Player player;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+       
         score = 0;
-        
+        Time.timeScale = 1;
+
     }
 
     private void FixedUpdate()
@@ -53,7 +54,7 @@ public class UiManager : MonoBehaviour
             //score += pointIncreasePerSecond * Time.deltaTime;
             score += 2 * Time.deltaTime;
             scoreText.text = "Score : " + (int)score;
-            Debug.Log("HMMMM ");
+            
         }
            
 
@@ -68,7 +69,7 @@ public class UiManager : MonoBehaviour
 
     public void RestartButton()
     {
-        Time.timeScale = 1;
+       
         SceneManager.LoadScene(1);
         Player.gameOver = false;
         score = 0;

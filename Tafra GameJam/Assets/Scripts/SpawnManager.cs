@@ -20,11 +20,13 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     GameObject enemy;
 
-
+    int enemyCount;
+    UiManager uiManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
         Instantiate(player, new Vector3(-18.08f, -9.08f, 0), Quaternion.identity);
 
         Instantiate(enemy, new Vector3(19.21f, -7.73f, 0), Quaternion.identity);
@@ -36,7 +38,9 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
+
+        Victory();
     }
 
     IEnumerator SpawningTaawezaandPeople()
@@ -62,7 +66,16 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    
+    void Victory()
+    {
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (enemyCount == 0)
+        {
+            uiManager.ShowCongratulationPanel();
+        }
+    }
+
+
 
 
 }

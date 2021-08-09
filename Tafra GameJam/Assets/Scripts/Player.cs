@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     float _speed;
 
-    int taawezaCount = 0;
+    int taawezaCount ;
 
     [SerializeField]
     GameObject eye;
@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         maxplayerHealth = 100;
         currentplayerHealth = 100 ;
         healthImage = GameObject.FindGameObjectWithTag("Health Image").GetComponent<Image>();
+        taawezaCount = 0;
     }
 
     // Update is called once per frame
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
         InstantiateEyes();
 
         healthImage.fillAmount = currentplayerHealth / maxplayerHealth;
-        if (currentplayerHealth == 0)
+        if (currentplayerHealth == 0 || transform.position.x < -21 || transform.position.x > 21.5)
         {
             Die();
         }

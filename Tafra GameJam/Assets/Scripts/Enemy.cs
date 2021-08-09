@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        transform.rotation = Quaternion.identity;
         //player = GameObject.Find("Player");
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
         pos = transform.position;
 
         uiManager = GameObject.Find("Canvas").GetComponent<UiManager>();
+       
     }
 
     // Update is called once per frame
@@ -51,9 +52,10 @@ public class Enemy : MonoBehaviour
     {
         agent.SetDestination(player.transform.position);
 
-        if (transform.rotation.x == -90)
+
+        if (transform.rotation.x >0)
         {
-            transform.rotation = Quaternion.identity;
+            transform.Rotate(new Vector3(0,transform.rotation.y,transform.rotation.z));
         }
         if (transform.position.y < -7.73f )
         {

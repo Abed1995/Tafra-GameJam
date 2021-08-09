@@ -7,13 +7,13 @@ public class Heart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DestroyItSelf());
     }
 
     // Update is called once per frame
     void Update()
     {
-        DestroyItSelf();
+       
     }
 
     IEnumerator DestroyItSelf()
