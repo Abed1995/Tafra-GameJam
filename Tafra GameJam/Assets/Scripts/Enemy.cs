@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     GameObject blackMagic;
 
-    CircleCollider2D cc;
+    CapsuleCollider2D cc;
 
     float maxhealth;
     float currenthealth;
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
-        cc = GetComponent<CircleCollider2D>();
+        cc = GetComponent<CapsuleCollider2D>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         StartCoroutine(SpawningBlackMagic());
